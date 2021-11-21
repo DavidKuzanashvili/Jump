@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="Jump">
+    <Groups>
+      <Group guid="Jump" id="JumpMenuGroup" priority="0x0600">
+        <Parent guid="VSMainMenu" id="Edit"/>
+      </Group>
+    </Groups>
+
+    <!--
+	    This section defines the elements the user can interact with, 
+		like a menu command or a button or combo box in a toolbar. 
+	-->
+    <Buttons>
+      <Button guid="Jump" id="OpenDialogCommand" priority="0x0100" type="Button">
+        <Parent guid="Jump" id="JumpMenuGroup" />
+		<Icon guid="ImageCatalogGuid" id="LineArrow" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Jump</ButtonText>
+          <LocCanonicalName>.Edit.Jump</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <KeyBindings>
+	<KeyBinding guid="Jump" id="OpenDialogCommand" editor="guidVSStd97" key1="2" mod1="ALT" />
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="Jump" value="{8b0c3eb6-36cc-4c45-bcfd-7e171e1c13cb}">
+      <IDSymbol name="JumpMenuGroup" value="0x0001" />
+      <IDSymbol name="OpenDialogCommand" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
